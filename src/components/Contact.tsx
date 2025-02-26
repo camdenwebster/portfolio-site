@@ -33,7 +33,7 @@ const Contact = () => {
 
             <div>
               <h3 className="text-xl font-bold mb-6">Send a Message</h3>
-              <form className="space-y-4">
+              <form className="space-y-4", data-netlify="true">
                 <div>
                   <label htmlFor="name" className="block text-gray-700 mb-2">
                     Name
