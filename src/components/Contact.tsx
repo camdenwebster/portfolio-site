@@ -33,7 +33,13 @@ const Contact = () => {
 
             <div>
               <h3 className="text-xl font-bold mb-6">Send a Message</h3>
-              <form className="space-y-4", data-netlify="true">
+              <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" className="space-y-4">
+                <input type="hidden" name="form-name" value="contact" />
+                <p className="hidden">
+                  <label>
+                    Don’t fill this out: <input name="bot-field" />
+                  </label>
+                </p>
                 <div>
                   <label htmlFor="name" className="block text-gray-700 mb-2">
                     Name
@@ -41,6 +47,7 @@ const Contact = () => {
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     required
                   />
@@ -52,6 +59,7 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     required
                   />
@@ -62,6 +70,7 @@ const Contact = () => {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={4}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     required
